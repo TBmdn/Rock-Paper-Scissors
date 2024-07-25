@@ -3,15 +3,12 @@ function getComputerChoice(){
 
     switch (randomChoice){
         case 0:
-            console.log(`Computer : ROCK`);
             return 'ROCK';
             break;
         case 1:
-            console.log(`Computer : PAPER`);
             return 'PAPER';
             break;
         case 2:
-            console.log(`Computer : SCISSOR`);
             return 'SCISSOR';
             break;
     }
@@ -22,18 +19,16 @@ function getHumanChoice(){
 
     switch(choice){
         case 'ROCK':
-            console.log(`You : ROCK`);
             return choice;
             break;
         case 'PAPER':
-            console.log(`You : PAPER`);
             return choice;
             break;
         case 'SCISSOR':
-            console.log(`You : SCISSOR`);
             return choice;
             break;
         default:
+            console.log(`error! enter your choice correctly`);
             getHumanChoice();
     }
 }
@@ -49,7 +44,13 @@ function youWin(winnerChoice,loserChoice){
     console.log(`You Win!, ${winnerChoice} beats ${loserChoice}`);
 }
 
+function printChoices(computerChoice,humanChoice){
+    console.log(`You: ${humanChoice}`);
+    console.log(`Computer: ${computerChoice}`);
+}
+
 function playRound(computerChoice,humanChoice){
+    printChoices(computerChoice,humanChoice);
     if (computerChoice == humanChoice) {
         console.log('Draw!');
         scoreBoard();
@@ -96,6 +97,22 @@ function playRound(computerChoice,humanChoice){
     }
 }
 
-let humanScore = 0,computerScore = 0;
+function playGame(){
+    playRound(getComputerChoice(),getHumanChoice());
+    playRound(getComputerChoice(),getHumanChoice());
+    playRound(getComputerChoice(),getHumanChoice());
+    playRound(getComputerChoice(),getHumanChoice());
+    playRound(getComputerChoice(),getHumanChoice());
+    if (humanScore == computerScore) {
+        console.log(`Draw!`);
+    }
+    else if (humanScore < computerScore) {
+        console.log(`You Lose!`);
+    }
+    else {
+        console.log(`You Win`);
+    }
+}
 
-console.log(playRound(getComputerChoice(),getHumanChoice()));
+let humanScore = 0,computerScore = 0;
+console.log(playGame());
