@@ -3,13 +3,31 @@ function getComputerChoice(){
 
     switch (randomChoice){
         case 0:
-            return 'rock'
+            return 'ROCK';
             break;
         case 1:
-            return 'paper'
+            return 'PAPER';
             break;
         case 2:
-            return 'scissor'
+            return 'SCISSORS';
             break;
+    }
+}
+
+function getHumanChoice(){
+    let choice = prompt('Enter you choice :').toUpperCase();
+
+    switch(choice){
+        case 'ROCK':
+            return choice;
+            break;
+        case 'PAPER':
+            return choice;
+            break;
+        case 'SCISSOR':
+            return choice;
+            break;
+        default:
+            getHumanChoice();
     }
 }
