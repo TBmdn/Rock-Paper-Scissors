@@ -98,11 +98,7 @@ function playRound(computerChoice,humanChoice){
 }
 
 function playGame(){
-    playRound(getComputerChoice(),getHumanChoice());
-    playRound(getComputerChoice(),getHumanChoice());
-    playRound(getComputerChoice(),getHumanChoice());
-    playRound(getComputerChoice(),getHumanChoice());
-    playRound(getComputerChoice(),getHumanChoice());
+
     if (humanScore == computerScore) {
         console.log(`Draw!`);
     }
