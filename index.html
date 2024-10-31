@@ -6,9 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="choice">Rock</button>
-    <button class="choice">Paper</button>
-    <button class="choice">Scissor</button>
+    <h2>Play Rock paper scissors with me</h2>
+    <div id="choices">
+            <h2>make you choice: </h2>
+            <button class="choice" id="Rock">Rock</button>
+            <button class="choice" id="Paper">Paper</button>
+            <button class="choice" id="Scissor">Scissor</button>
+    </div>
+    <div id="dashboard">
+        <p id="user-choice">You : chose !</p>
+        <p id="computer-choice">Computer : waiting for you !</p>
+        <p id="round-result"></p>
+        <p id="score">Your score : 0 <br> Computer score : 0</p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
